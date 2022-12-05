@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+        />
+        <!-- привязка шрифта -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Pacifico&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="./favicon/favicon.ico"
+        />
+        <!-- привязка бутстрапа -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <!-- привязка файла стилей -->
+        <link
+            rel="stylesheet"
+            href="./style.css"
+        />
+        <title>Мир рецептов</title>
+    </head>
+    <body>
+        <div class="allBack color-back">
+            <!-- Хэдер -->
+            <div class="header">
+                <div class="logo-img ibl mx-4"></div>
+                <div class="greetings ibl">
+                    Добро пожаловать и приятного аппетита!
+                </div>
+                <div class="logo-img ibl mx-4"></div>
+            </div>
+            <!-- Слайдер -->
+            <div class="sliderBack">
+                <div class="slider">
+                    <!-- Блок с рецептом -->
+                    <div id="opacityBg"></div>
+                    <div class="reciept">
+                        <h2 class="recieptName"></h2>
+                        <div class="container-sm mt-5">
+                            <div class="row justify-content-around">
+                                <!-- Блок с ингредиентами -->
+                                <div class="col-5">
+                                    <h5>Ингредиенты:</h5>
+                                    <br />
+                                    <ul class="ingridients">
+                                        Loading...
+                                    </ul>
+                                </div>
+                                <!-- Блок с инструкцией -->
+                                <div class="col-5">
+                                    <h5 class="center">Рецепт:</h5>
+                                    <br />
+                                    <p class="cookInstruction">Loading...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- кнопка закрытия рецепта -->
+                        <div
+                            class="closeReciept cp"
+                            id="closeReciept"
+                        ></div>
+                    </div>
+                    <!-- непосредственно слайдер -->
+                    <div
+                        id="carouselExampleCaptions"
+                        class="carousel slide"
+                    >
+                        <div class="carousel-indicators">
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide-to="0"
+                                class="active"
+                                aria-current="true"
+                                aria-label="Slide 1"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide-to="1"
+                                aria-label="Slide 2"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide-to="2"
+                                aria-label="Slide 3"
+                            ></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div
+                                class="carousel-item active"
+                                data-bs-interval="200000"
+                            >
+                                <!-- изображение блюда -->
+                                <!-- id улавливания слайда для смены значения атрибутов -->
+                                <!-- name для запроса в БД -->
+                                <img
+                                    src="./img/cakes/strawberry.png"
+                                    class="d-block w-100 cp"
+                                    alt="..."
+                                    id="slideOne"
+                                    name="strawberryCake"
+                                />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5
+                                        id="slideOneTitle"
+                                        class="slideTitle"
+                                    >
+                                        Клубничный пирог
+                                    </h5>
+                                    <p>Нажми на фото и узнаешь рецепт</p>
+                                </div>
+                            </div>
+                            <div
+                                class="carousel-item"
+                                data-bs-interval="200000"
+                            >
+                                <img
+                                    src="./img/cakes/cabbage.jpg"
+                                    class="d-block w-100 cp"
+                                    alt="..."
+                                    id="slideTwo"
+                                    name="cabbageCake"
+                                />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5
+                                        id="slideTwoTitle"
+                                        class="slideTitle"
+                                    >
+                                        Капустный пирог
+                                    </h5>
+                                    <p>Нажми на фото и узнаешь рецепт</p>
+                                </div>
+                            </div>
+                            <div
+                                class="carousel-item"
+                                data-bs-interval="200000"
+                            >
+                                <img
+                                    src="./img/cakes/pancake.jpg"
+                                    class="d-block w-100 cp"
+                                    alt="..."
+                                    id="slideThree"
+                                    name="panCake"
+                                />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5
+                                        id="slideThreeTitle"
+                                        class="slideTitle"
+                                    >
+                                        Оладьи на кефире
+                                    </h5>
+                                    <p>Нажми на фото и узнаешь рецепт</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev"
+                        >
+                            <span
+                                class="carousel-control-prev-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Предыдущий</span>
+                        </button>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next"
+                        >
+                            <span
+                                class="carousel-control-next-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Следующий</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- список категорий рецептов -->
+            <div class="container maxWidth">
+                <!-- name для выбота функции замены слайдов -->
+                <img
+                    src="./img/chooseCakes.jpg"
+                    alt=""
+                    class="foodType cp"
+                    name="cakes"
+                />
+                <img
+                    src="./img/chooseSalad.jpg"
+                    alt=""
+                    class="foodType cp"
+                    name="salads"
+                />
+                <img
+                    src="./img/chooseMeat.jpg"
+                    alt=""
+                    class="foodType cp"
+                    name="meat"
+                />
+            </div>
+            <div class="footer">
+                <div class="container-md">
+                    <div class="row align-items-end">
+                        <div class="col-md-2 primary">
+                            <p>Powered by Maber</p>
+                        </div>
+                        <div class="col-md-4 secondary"></div>
+                        <div class="col-md-2 success"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
+        <!-- привязка файла скриптов -->
+        <script src="/script.js"></script>
+    </body>
+</html>

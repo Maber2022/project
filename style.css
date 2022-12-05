@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Pacifico&display=swap");
+* {
+    font-family: "Pacifico";
+}
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+/* фон сайта */
+.color-back {
+    background-color: rgb(247, 200, 208);
+}
+/* фоновый блок всего сайта */
+.allBack {
+    min-width: 1100px;
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+}
+.header,
+.footer {
+    width: 100%;
+    height: 10vh;
+    background-color: grey;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("./img/headerBg.jpg");
+    background-size: cover;
+}
+.footer {
+    position: absolute;
+    top: 90vh;
+    background-image: url("./img/footerBg.png");
+    background-size: cover;
+    color: whitesmoke;
+}
+/* класс inline-block */
+.ibl {
+    display: inline-block;
+    float: left;
+}
+/* класс cursor pointer */
+.cp {
+    cursor: pointer;
+}
+/* логотип */
+.logo-img {
+    background-image: url("./img/headerLogo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 10vh;
+    width: 10%;
+}
+/* блок с приветствием  */
+.greetings {
+    max-width: 74%;
+    font-size: 44px;
+    padding-top: 20px;
+    color: whitesmoke;
+}
+/* блок с карточками видов рецептов */
+.maxWidth {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    height: 26%;
+    margin-top: 1vh;
+}
+/* карточка вида рецептов */
+.foodType {
+    height: 26vh;
+    max-height: 340px;
+    max-width: 380px;
+    background-size: contain;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+/* выделение карточки вида рецептов */
+.foodType:hover {
+    opacity: 0.8;
+    border: 1px solid white;
+}
+/* скайдер с блюдами */
+.slider {
+    position: relative;
+    margin: auto;
+    max-width: 1200px;
+    max-height: 659px;
+    margin-top: 1vh;
+    border: 1px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    /* animation-name: changeSlider;*/
+    animation-duration: 3s;
+}
+/* фоновый блок для фиксации списка видов рецептов */
+.sliderBack {
+    margin: auto;
+}
+/* фоновый блок для рецепта */
+#opacityBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(197, 202, 202);
+    /* animation-name: changeOpacityOn; */
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    /* z-index: 8; */
+}
+/* блок рецепта */
+.reciept {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* z-index: 10; */
+    overflow-y: auto;
+}
+/* элемент закрытия рецепта */
+.closeReciept {
+    background-image: url("./img/close.png");
+    background-size: contain;
+    background-position: center;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    /* z-index: 11; */
+}
+/* элемент с именем рецепта */
+.recieptName {
+    text-align: center;
+}
+/* имя слайда */
+.slideTitle {
+    font-size: 26px;
+}
+/* класс выравнивания текста */
+.center {
+    text-align: center;
+}
+
+/* Анимация появления полупрозрачного фона */
+@keyframes changeOpacityOn {
+    from {
+        opacity: 0;
+        z-index: 0;
+    }
+    to {
+        z-index: 8;
+        opacity: 0.8;
+    }
+}
+/* Анимация удаления полупрозрачного фона */
+@keyframes changeOpacityOff {
+    from {
+        opacity: 0.8;
+    }
+    99% {
+        z-index: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/* анимация свертывания-развертывания слайдера */
+@keyframes changeSlider {
+    from {
+        height: inherit;
+    }
+    30% {
+        height: 0;
+    }
+    60% {
+        height: 0;
+    }
+    to {
+        height: inherit;
+    }
+}
