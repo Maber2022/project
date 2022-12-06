@@ -32,8 +32,6 @@ body {
     background-size: cover;
 }
 .footer {
-    position: absolute;
-    top: 90vh;
     background-image: url("./img/footerBg.png");
     background-size: cover;
     color: whitesmoke;
