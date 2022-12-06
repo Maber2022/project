@@ -7,6 +7,7 @@ body {
     padding: 0;
     margin: 0;
     height: 100%;
+    background-color: rgb(247, 200, 208);
 }
 /* фон сайта */
 .color-back {
